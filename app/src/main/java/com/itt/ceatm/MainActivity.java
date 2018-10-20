@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 //        cambiar = (Button) findViewById(R.id.btn_cambiar);
+        //        cambiar = (Button) findViewById(R.id.btn_cambiar);
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
