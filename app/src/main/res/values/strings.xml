@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CEATM</string>
+    <string name="title_atleta_perfil">Perfil</string>
+    <string name="title_atleta_estadisticas">Estadísticas</string>
+    <string name="title_atleta_competencias">Competencias</string>
+
+    <string name="title_administrador_atletas">Atletas</string>
+    <string name="title_administrador_entrenadores">Entrenadores</string>
+    <string name="title_administrador_competencias">Competencias</string>
+
+</resources>

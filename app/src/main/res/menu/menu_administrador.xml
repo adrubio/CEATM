@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_administrador_atletas"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_administrador_atletas" />
+
+    <item
+        android:id="@+id/nav_administrador_entrenadores"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_administrador_entrenadores" />
+
+    <item
+        android:id="@+id/nav_administrador_competencias"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_administrador_competencias" />
+
+
+</menu>
