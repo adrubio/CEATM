@@ -8,8 +8,17 @@
     tools:context=".MainActivity">
 
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="57dp"
+        android:layout_height="54dp"
+        android:background="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
     <FrameLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/fragment_container_visualizar_atleta"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_nav_admin_atletas"
@@ -30,7 +39,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_atleta" />
+        app:menu="@menu/menu_administrador_atletas" >
+
+    </android.support.design.widget.BottomNavigationView>
 
 
 </android.support.constraint.ConstraintLayout>

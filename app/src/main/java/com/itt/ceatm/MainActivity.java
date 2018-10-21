@@ -6,12 +6,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
@@ -22,12 +18,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        cambiar = (Button) findViewById(R.id.btn_cambiar);
         //        cambiar = (Button) findViewById(R.id.btn_cambiar);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin_atletas);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new atleta_perfil()).commit();
 
     }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             selectedFragment = new atleta_estadisticas();
                             break;
                         case R.id.nav_atleta_competencias:
-                            selectedFragment = new atleta_competencias();
+                            selectedFragment = new administrador_atletas();
                             break;
                     }
 
@@ -53,15 +50,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     return true;
                 }
             };
-
-    @Override
-    public void onClick(View v) {
-//        if (v.getId() == R.id.btn_cambiar){
-//            cambiar.setText("Cambie");
-//        }
-
-        Button btn1 = (Button) v;
-        ((Button) v).setText("Picado");
-    }
 
 }
