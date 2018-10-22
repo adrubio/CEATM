@@ -27,7 +27,7 @@ public class lista_atletas_adaptador extends RecyclerView.Adapter<lista_atletas_
     @NonNull
     @Override
     public Lista_Atletas_ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list,viewGroup,false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rv_atletas_lista,viewGroup,false);
         return new Lista_Atletas_ViewHolder(v);
     }
 
