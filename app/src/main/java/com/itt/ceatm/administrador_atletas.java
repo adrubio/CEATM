@@ -25,7 +25,14 @@ public class administrador_atletas extends Fragment {
 
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_administrador_atletas, container, false);
+
         rcc_lista_atletas = (RecyclerView)view.findViewById(R.id.recycler_administrador_atletas);
+
+        LinearLayoutManager linear = new LinearLayoutManager(this.getActivity());
+        linear.setOrientation(LinearLayoutManager.VERTICAL);
+        rcc_lista_atletas.setLayoutManager(linear);
+        data();
+        iniciar_adaptador_atletas();
         return view;
     }
 
@@ -34,12 +41,6 @@ public class administrador_atletas extends Fragment {
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        LinearLayoutManager linear = new LinearLayoutManager(this.getActivity());
-        linear.setOrientation(LinearLayoutManager.VERTICAL);
-        rcc_lista_atletas.setLayoutManager(linear);
-
-        data();
-        iniciar_adaptador_atletas();
     }
 
 

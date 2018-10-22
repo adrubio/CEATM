@@ -8,4 +8,6 @@
     <string name="title_administrador_entrenadores">Entrenadores</string>
     <string name="title_administrador_competencias">Competencias</string>
 
+    <string name="estadistica_description"></string>
+
 </resources>
