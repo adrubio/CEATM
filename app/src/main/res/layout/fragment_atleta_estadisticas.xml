@@ -42,7 +42,7 @@
         app:layout_constraintGuide_end="60dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_Ranking"
         android:layout_width="114dp"
         android:layout_height="wrap_content"
         android:text="Ranking MX"
