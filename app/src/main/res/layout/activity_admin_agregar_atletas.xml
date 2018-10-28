@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Admin_Agregar_Atletas">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_centro_absoluto4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_bottomnav6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90895295" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Agregar atleta"
+        android:textAlignment="center"
+        android:textColor="@color/color_negro"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="296dp"
+        android:layout_height="556dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.588"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_Nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:textColorHint="@color/colorPrimario"
+                app:boxBackgroundColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.658"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="130dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimario"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/sp_Deporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ms_arrowColor="@color/colorPrimario"
+                app:ms_arrowSize="20dp"
+                app:ms_baseColor="@color/colorPrimario"
+                app:ms_floatingLabelColor="@color/colorPrimario"
+                app:ms_floatingLabelText="Deporte"
+                app:ms_highlightColor="@color/color_negro"
+                app:ms_hint="Seleccionar deporte..."
+                app:ms_thickness="0.8dp" />
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/sp_Modalidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ms_arrowColor="@color/colorPrimario"
+                app:ms_arrowSize="20dp"
+                app:ms_baseColor="@color/colorPrimario"
+                app:ms_floatingLabelColor="@color/colorPrimario"
+                app:ms_floatingLabelText="Modalidad"
+                app:ms_highlightColor="@color/color_negro"
+                app:ms_hint="Seleccionar modalidad..."
+                app:ms_thickness="1dp" />
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/sp_Entrenador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ms_arrowColor="@color/colorPrimario"
+                app:ms_arrowSize="20dp"
+                app:ms_baseColor="@color/colorPrimario"
+                app:ms_floatingLabelColor="@color/colorPrimario"
+                app:ms_floatingLabelText="Entrenador"
+                app:ms_highlightColor="@color/color_negro"
+                app:ms_hint="Seleccionar entrenador..."
+                app:ms_thickness="0.8dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_Edad"
+                    android:layout_width="217dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="32dp"
+                    android:textColorHint="@color/colorPrimario"
+                    app:boxBackgroundColor="@color/colorPrimary"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/et_Edad"
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Edad"
+                        android:backgroundTint="@color/colorPrimario"
+                        android:inputType="number" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_Nacimiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/colorPrimario"
+                    app:boxBackgroundColor="@color/colorPrimary"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/et_Nacimiento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/colorPrimario"
+                        android:ems="10"
+                        android:hint="Fecha de nacimiento"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/sp_Municipio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:ms_arrowColor="@color/colorPrimario"
+                app:ms_arrowSize="20dp"
+                app:ms_baseColor="@color/colorPrimario"
+                app:ms_floatingLabelColor="@color/colorPrimario"
+                app:ms_floatingLabelText="Municipio"
+                app:ms_highlightColor="@color/color_negro"
+                app:ms_hint="Seleccionar municipio..."
+                app:ms_thickness="0.8dp" />
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="201dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/est_boton_verde"
+                android:onClick="onClick"
+                android:text="Guardar"
+                android:textAlignment="center"
+                android:textColor="@color/color_blanco"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -78,7 +78,7 @@ public class lista_estadisticas_adaptador extends RecyclerView.Adapter<lista_est
 
 
             set1.setColor(Color.GRAY);
-            //set1.setColors(new int[] { R.color.colorPrimary, R.color.colorPrimario, R.color.color_negro, R.color.colorAccent }, atleta_estadisticas.this.getContext());
+            //set1.setColors(new int[] { R.color.colorPrimary, R.color.colorPrimario, R.color.color_negro, R.color.colorAccent }, frg_atleta_estadisticas.this.getContext());
 //        set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
             set1.setLineWidth(5f);
             set1.setCircleColor(Color.RED);

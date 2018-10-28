@@ -6,24 +6,23 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.github.mikephil.charting.charts.LineChart;
-
-public class MainActivity extends AppCompatActivity {
+public class Activity_Atleta extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_atletas);
 
 //        cambiar = (Button) findViewById(R.id.btn_cambiar);
         //        cambiar = (Button) findViewById(R.id.btn_cambiar);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin_atletas);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_atletas);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new atleta_perfil()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new frg_atleta_perfil()).commit();
 
     }
 
@@ -35,24 +34,26 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectedFragment = null;
 
                     switch (item.getItemId()) {
-                        case R.id.nav_atleta_perfil:
-                            selectedFragment = new atleta_perfil();
+                        case R.id.bnav_atleta_perfil:
+                            selectedFragment = new frg_atleta_perfil();
                             break;
-                        case R.id.nav_atleta_estadisticas:
-                            selectedFragment = new atleta_estadisticas();
+                        case R.id.bnav_atleta_estadisticas:
+                            selectedFragment = new frg_atleta_estadisticas();
                             break;
-                        case R.id.nav_atleta_competencias:
-                            selectedFragment = new administrador_atletas();
+                        case R.id.bnav_atleta_competencias:
+                            selectedFragment = new frg_atleta_competencias();
                             break;
                     }
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();
-
                     return true;
                 }
             };
 
 
-
+    public void onClick(View view) {
+        //Para que mate la actividad y no se ponga en espera
+        finish();
+    }
 }

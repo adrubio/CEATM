@@ -60,7 +60,7 @@ public class lista_atletas_adaptador extends RecyclerView.Adapter<lista_atletas_
             Context context = v.getContext();
             int position = getAdapterPosition();
             lista_atletas lista = atletas_lista.get(position);
-            Intent intent = new Intent(v.getContext(), administrador_visualizar_atletas.class);
+            Intent intent = new Intent(v.getContext(), Activity_Administrador_Ver_Atletas.class);
             intent.putExtra(NOMBRE, lista.getNombre());
             intent.putExtra(DEPORTE, lista.getDeporte());
             context.startActivity(intent);

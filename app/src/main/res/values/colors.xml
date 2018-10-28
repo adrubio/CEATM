@@ -6,4 +6,5 @@
     <color name="colorPrimario">#005cad</color>
     <color name="color_negro">#000000</color>
     <color name="transparent">#00ffffff</color>
+    <color name="color_blanco">#ffffff</color>
 </resources>

@@ -5,17 +5,13 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import static com.itt.ceatm.lista_atletas_adaptador.NOMBRE;
 import static com.itt.ceatm.lista_atletas_adaptador.DEPORTE;
 
-public class administrador_visualizar_atletas extends AppCompatActivity {
+public class Activity_Administrador_Ver_Atletas extends AppCompatActivity {
 
     private  String nombre;
     private  String deporte;
@@ -25,12 +21,12 @@ public class administrador_visualizar_atletas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.administrador_visualizar_menu_atleta);
+        setContentView(R.layout.activity_administrador_ver_atleta);
 
 //        cambiar = (Button) findViewById(R.id.btn_cambiar);
         //        cambiar = (Button) findViewById(R.id.btn_cambiar);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin_atletas);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_atletas);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_visualizar_atleta,new administrador_visualizar_atletas_perfil()).commit();

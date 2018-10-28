@@ -1,11 +1,6 @@
 package com.itt.ceatm;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,30 +10,16 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.AxisBase;
-import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.ChartData;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.ChartTouchListener;
 import com.github.mikephil.charting.listener.OnChartGestureListener;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
-import java.util.List;
 
-public class atleta_estadisticas extends Fragment implements OnChartGestureListener, OnChartValueSelectedListener {
+public class frg_atleta_estadisticas extends Fragment implements OnChartGestureListener, OnChartValueSelectedListener {
 
     private static final String TAG="atleta_estatisticas";
     //Lista de atletas
@@ -51,7 +32,7 @@ public class atleta_estadisticas extends Fragment implements OnChartGestureListe
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_atleta_estadisticas, container, false);
+        View view = inflater.inflate(R.layout.frg_atleta_estadisticas, container, false);
 
         rcc_lista_estadisticas = (RecyclerView)view.findViewById(R.id.rcc_atletas_estadisticas);
         LinearLayoutManager linear = new LinearLayoutManager(this.getActivity());
@@ -63,9 +44,9 @@ public class atleta_estadisticas extends Fragment implements OnChartGestureListe
     }
 
 
-    public static atleta_estadisticas newInstance() {
+    public static frg_atleta_estadisticas newInstance() {
         Bundle bundle = new Bundle();
-        atleta_estadisticas fragment = new atleta_estadisticas();
+        frg_atleta_estadisticas fragment = new frg_atleta_estadisticas();
         fragment.setArguments(bundle);
 
         return fragment;
