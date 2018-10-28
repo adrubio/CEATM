@@ -1,5 +1,7 @@
 package com.itt.ceatm;
 
+import android.content.Intent;
+import android.support.design.button.MaterialButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -7,17 +9,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 import static android.R.layout.simple_spinner_item;
 
-public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements AdapterView.OnItemSelectedListener, DatePickerDialog.OnDateSetListener {
 
 
     MaterialSpinner sp_deporte;
@@ -26,10 +34,17 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
     MaterialSpinner sp_municipio;
     EditText et_nombre;
     EditText et_edad;
-    EditText et_nacimiento;
+    Button btn_nacimiento;
     TextInputLayout ti_nombre;
     TextInputLayout ti_edad;
-    TextInputLayout ti_nacimiento;
+    TextView tv_nacimiento;
+    TextView tv_edad;
+
+    //Variables para mandar a la base de datos
+    int edad_actual;
+    int nacimiento_dia;
+    int nacimiento_mes;
+    int nacimiento_ano;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +56,16 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
         sp_entrenador = (MaterialSpinner) findViewById(R.id.sp_Entrenador);
         sp_municipio = (MaterialSpinner) findViewById(R.id.sp_Municipio);
         et_nombre = (EditText) findViewById(R.id.et_Nombre);
-        et_edad = (EditText) findViewById(R.id.et_Edad);
-        et_nacimiento = (EditText) findViewById(R.id.et_Nacimiento);
-
         ti_nombre = (TextInputLayout) findViewById(R.id.ti_Nombre);
-        ti_edad = (TextInputLayout) findViewById(R.id.ti_Edad);
-        ti_nacimiento = (TextInputLayout) findViewById(R.id.ti_Nacimiento);
+        btn_nacimiento = (Button) findViewById(R.id.btn_Nacimiento);
+        tv_nacimiento = (TextView) findViewById(R.id.tv_Nacimiento);
+        tv_edad = (TextView) findViewById(R.id.tv_Edad);
 
         //Creacion de listas para los datos
-        ArrayList<String> datos_Deportes = new ArrayList<String>();
-        ArrayList<String> datos_Modalidades = new ArrayList<String>();
-        ArrayList<String> datos_Entrenadores = new ArrayList<String>();
-        ArrayList<String> datos_Municipios = new ArrayList<String>();
+        ArrayList<String> datos_Deportes = new ArrayList<>();
+        ArrayList<String> datos_Modalidades = new ArrayList<>();
+        ArrayList<String> datos_Entrenadores = new ArrayList<>();
+        ArrayList<String> datos_Municipios = new ArrayList<>();
 
 
         //Llenado de datos
@@ -71,7 +84,6 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
         datos_Municipios.add("Tijuana");
         datos_Municipios.add("Mexicali");
         datos_Municipios.add("Ensenada");
-        datos_Municipios.add("Mexicali");
 
 
         //Declaracion de adaptadores
@@ -107,9 +119,6 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
 
         //Quitar los focus de algun editText que se haya modificado anteriormente
         ti_nombre.clearFocus();
-        ti_edad.clearFocus();
-        ti_nacimiento.clearFocus();
-
     }
 
     @Override
@@ -118,11 +127,87 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
     }
 
     public void onClick(View view) {
-        //Proceso de comprobacion de campos y mandar datos a la base de datos
-        ///...
 
-        //Si se hizo correctamente, salir de la actividad
-        Toast.makeText(this, "Atleta creado exitosamente", Toast.LENGTH_SHORT).show();
-        finish();
+        switch (view.getId()){
+            case R.id.btn_Nacimiento:
+                Calendar now = Calendar.getInstance();
+                DatePickerDialog fecha_dialogo = DatePickerDialog.newInstance(
+                        Activity_Admin_Agregar_Atletas.this,
+
+                        //Se establece que se muestra un promedio de edad y se pone en medio en mes y el dia para que sea mas facil ir a los extremos (Enero y Diciembre)
+                        2000, // Initial year selection
+                        6, // Initial month selection
+                        15// Inital day selection
+                );
+
+                fecha_dialogo.showYearPickerFirst(true);
+                fecha_dialogo.setTitle("Fecha de nacimiento");
+                fecha_dialogo.show(getFragmentManager(), "Datepickerdialog");;
+                fecha_dialogo.setAccentColor(getResources().getColor(R.color.colorPrimario));
+
+                //Para las competencias
+//                Calendar minimo = Calendar.getInstance();
+//                fecha_dialogo.setMinDate(minimo);
+
+
+
+                //Se obtiene el año actual menos 18, que hace referencia a que lo minimo que se debe de tener son 18 años
+                int año_maximo = Calendar.getInstance().get(Calendar.YEAR) - 18;
+
+                //Fecha de nacimiento maxima
+                Calendar maximo = Calendar.getInstance();
+                maximo.set(año_maximo,11,31);
+                fecha_dialogo.setMaxDate(maximo);
+
+                break;
+
+            case R.id.btn_Guardar:
+                //Proceso de comprobacion de campos y mandar datos a la base de datos
+                ///...
+
+
+                //Si se hizo correctamente, salir de la actividad
+                Toast.makeText(this, "Atleta creado exitosamente", Toast.LENGTH_SHORT).show();
+                finish();
+
+                break;
+
+            case R.id.btn_regresar_agregar:
+                finish();
+                break;
+        }
+
+    }
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        Toast.makeText(this, "Seleccionaste: 1", Toast.LENGTH_SHORT).show();
+        tv_nacimiento.setText(String.format("%d / %d / %d",dayOfMonth,monthOfYear,year));
+
+//        int edad_actual = Calendar.getInstance().get(Calendar.YEAR) - year;
+
+        edad_actual = getAge(year,monthOfYear,dayOfMonth);
+        nacimiento_dia = dayOfMonth;
+        nacimiento_mes = monthOfYear;
+        nacimiento_ano = year;
+
+        tv_edad.setText(String.format("%d",edad_actual));
+    }
+
+    public int getAge (int _year, int _month, int _day) {
+        //Fecha del calendario actual
+        Calendar cal = Calendar.getInstance();
+        int y, m, d, edad;
+
+        y = cal.get(Calendar.YEAR);
+        m = cal.get(Calendar.MONTH) + 1; // Because if from 0 to 11
+        d = cal.get(Calendar.DAY_OF_MONTH);
+        edad = cal.get(Calendar.YEAR) - _year;
+
+        //Diferenciar si ya cumplio años en el alo presente o no
+        if ((_month > cal.get(Calendar.MONTH)) || ((_month == cal.get(Calendar.MONTH)) && (_day > cal.get(Calendar.DAY_OF_MONTH)))) {
+            --edad;
+        }
+        return edad;
     }
 }

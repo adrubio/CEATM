@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Activity_Admin_Agregar_Atletas">
 
+    <ImageButton
+        android:id="@+id/btn_regresar_agregar"
+        android:layout_width="57dp"
+        android:layout_height="54dp"
+        android:background="@color/transparent"
+        android:onClick="onClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
     <android.support.constraint.Guideline
         android:id="@+id/gd_centro_absoluto4"
         android:layout_width="wrap_content"
@@ -118,58 +128,77 @@
                 app:ms_thickness="0.8dp" />
 
 
+            <Button
+                android:id="@+id/btn_Nacimiento"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/est_boton_azul"
+                android:onClick="onClick"
+                android:text="Seleccionar fecha de nacimiento"
+                android:textColor="@color/color_blanco" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nacimiento"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_negro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Edad"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_negro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
                 android:orientation="horizontal">
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/ti_Edad"
-                    android:layout_width="217dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="32dp"
-                    android:textColorHint="@color/colorPrimario"
-                    app:boxBackgroundColor="@color/colorPrimary"
-                    android:layout_weight="1">
-
-                    <EditText
-                        android:id="@+id/et_Edad"
-                        android:layout_width="151dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:hint="Edad"
-                        android:backgroundTint="@color/colorPrimario"
-                        android:inputType="number" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/ti_Nacimiento"
+                <TextView
+                    android:id="@+id/tv_Nacimiento"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColorHint="@color/colorPrimario"
-                    app:boxBackgroundColor="@color/colorPrimary"
-                    android:layout_weight="1">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/et_Nacimiento"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/colorPrimario"
-                        android:ems="10"
-                        android:hint="Fecha de nacimiento"
-                        android:inputType="date" />
-                </android.support.design.widget.TextInputLayout>
-
+                <TextView
+                    android:id="@+id/tv_Edad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <fr.ganfra.materialspinner.MaterialSpinner
                 android:id="@+id/sp_Municipio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:layout_marginTop="8dp"
                 app:ms_arrowColor="@color/colorPrimario"
                 app:ms_arrowSize="20dp"
                 app:ms_baseColor="@color/colorPrimario"
@@ -181,11 +210,11 @@
 
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_Guardar"
                 android:layout_width="201dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/est_boton_verde"
                 android:onClick="onClick"
                 android:text="Guardar"
