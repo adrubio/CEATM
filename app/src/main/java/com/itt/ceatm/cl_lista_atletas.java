@@ -1,12 +1,12 @@
 package com.itt.ceatm;
 
-public class lista_atletas {
+public class cl_lista_atletas {
 
     private String nombre;
     private String deporte;
 
     //Constructor
-    public lista_atletas(String nombre, String deporte) {
+    public cl_lista_atletas(String nombre, String deporte) {
         this.nombre = nombre;
         this.deporte = deporte;
     }
