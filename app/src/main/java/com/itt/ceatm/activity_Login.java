@@ -12,7 +12,7 @@ public class activity_Login extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login1);
     }
-
+//Hola esta es una prueba
 
     @Override
     public void onClick(View v) {
