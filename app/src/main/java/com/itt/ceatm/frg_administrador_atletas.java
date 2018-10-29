@@ -14,9 +14,9 @@ import java.util.List;
 public class frg_administrador_atletas extends Fragment {
 
     //Lista de atletas
-    public List<cl_lista_atletas> lista_atl;
+    public List<lista_atletas> lista_atl;
     public RecyclerView rcc_lista_atletas;
-    public cl_lista_atletas_adaptador adaptador_lista_atletas;
+    public lista_atletas_adaptador adaptador_lista_atletas;
 
 
 
@@ -56,16 +56,16 @@ public class frg_administrador_atletas extends Fragment {
 
     public void data(){
         lista_atl = new ArrayList<>();
-        lista_atl.add(new cl_lista_atletas("Astrid Ruvalcaba Ramos", "Esgrima"));
-        lista_atl.add(new cl_lista_atletas("Daniel Sanchez Cuevas", "G. Artistica"));
-        lista_atl.add(new cl_lista_atletas("Alexa Luna Contreras", "TKD"));
-        lista_atl.add(new cl_lista_atletas("Paul Carillo Mendez", "Natacion"));
-        lista_atl.add(new cl_lista_atletas("Karen Mendoza Galindo", "Boxeo"));
-        lista_atl.add(new cl_lista_atletas("Marco Torres Miranda", "Tiro con arco"));
+        lista_atl.add(new lista_atletas("Astrid Ruvalcaba Ramos", "Esgrima"));
+        lista_atl.add(new lista_atletas("Daniel Sanchez Cuevas", "G. Artistica"));
+        lista_atl.add(new lista_atletas("Alexa Luna Contreras", "TKD"));
+        lista_atl.add(new lista_atletas("Paul Carillo Mendez", "Natacion"));
+        lista_atl.add(new lista_atletas("Karen Mendoza Galindo", "Boxeo"));
+        lista_atl.add(new lista_atletas("Marco Torres Miranda", "Tiro con arco"));
     }
 
     public void iniciar_adaptador_atletas(){
-        adaptador_lista_atletas = new cl_lista_atletas_adaptador(lista_atl);
+        adaptador_lista_atletas = new lista_atletas_adaptador(lista_atl);
         rcc_lista_atletas.setAdapter(adaptador_lista_atletas);
     }
 

@@ -1,5 +1,7 @@
 package com.itt.ceatm;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -7,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -22,7 +25,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lista_estadisticas_adaptador.Lista_Estadisticas_ViewHolder>{
+public class lista_estadisticas_adaptador extends RecyclerView.Adapter<lista_estadisticas_adaptador.Lista_Estadisticas_ViewHolder>{
 
     public static final String NOMBRE = "NOMBRE";
     public static final String DEPORTE = "DEPOERTE";
@@ -31,8 +34,8 @@ public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lis
 
 
     // Nombre de clase de Java
-    private List<cl_lista_estadisticas> estadisticas_lista;
-    public cl_lista_estadisticas_adaptador(List<cl_lista_estadisticas> estadisticas_lista ){
+    private List<lista_estadisticas> estadisticas_lista;
+    public lista_estadisticas_adaptador(List<lista_estadisticas> estadisticas_lista ){
         this.estadisticas_lista = estadisticas_lista;
     }
 
@@ -47,7 +50,7 @@ public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lis
 
     @Override
     public void onBindViewHolder(@NonNull Lista_Estadisticas_ViewHolder Lista_Estadisticas_ViewHolder, int i) {
-        //cl_lista_estadisticas lista = estadisticas_lista.get(i);
+        //lista_estadisticas lista = estadisticas_lista.get(i);
     }
 
     @Override
@@ -170,6 +173,7 @@ public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lis
         }
     }
     public void Set_ChartValues(){
+
 
         puntuaciones1 = new ArrayList<>();
 

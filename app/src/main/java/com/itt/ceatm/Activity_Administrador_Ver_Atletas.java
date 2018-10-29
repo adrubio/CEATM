@@ -8,8 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import static com.itt.ceatm.cl_lista_atletas_adaptador.NOMBRE;
-import static com.itt.ceatm.cl_lista_atletas_adaptador.DEPORTE;
+import static com.itt.ceatm.lista_atletas_adaptador.NOMBRE;
+import static com.itt.ceatm.lista_atletas_adaptador.DEPORTE;
 
 public class Activity_Administrador_Ver_Atletas extends AppCompatActivity {
 

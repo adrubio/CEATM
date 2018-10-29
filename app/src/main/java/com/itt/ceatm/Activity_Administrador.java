@@ -24,8 +24,10 @@ public class Activity_Administrador extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frg_admin,new frg_administrador_atletas()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new frg_administrador_atletas()).commit();
+
     }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,11 +43,11 @@ public class Activity_Administrador extends AppCompatActivity {
                             selectedFragment = new frg_atleta_estadisticas();
                             break;
                         case R.id.bnav_administrador_competencias:
-                            selectedFragment = new frg_admin_competencias();
+                            selectedFragment = new frg_atleta_competencias();
                             break;
                     }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frg_admin,
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();
 
                     return true;

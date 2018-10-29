@@ -1,13 +1,13 @@
 package com.itt.ceatm;
 
-public class cl_lista_estadisticas {
+public class lista_estadisticas {
 
     private String competencia_Nombre;
     private float competencia_Index;
     private float puntuacion;
 
     //Constructor
-    public cl_lista_estadisticas(String competencia_Nombre, float competencia_Index, float puntuacion) {
+    public lista_estadisticas(String competencia_Nombre, float competencia_Index, float puntuacion) {
         this.competencia_Nombre = competencia_Nombre;
         this.competencia_Index = competencia_Index;
         this.puntuacion = puntuacion;
