@@ -11,14 +11,14 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class lista_atletas_adaptador extends RecyclerView.Adapter<lista_atletas_adaptador.Lista_Atletas_ViewHolder>{
+public class cl_lista_atletas_adaptador extends RecyclerView.Adapter<cl_lista_atletas_adaptador.Lista_Atletas_ViewHolder>{
 
     public static final String NOMBRE = "NOMBRE";
     public static final String DEPORTE = "DEPOERTE";
 
     // Nombre de clase de Java
-    private List<lista_atletas> atletas_lista;
-    public lista_atletas_adaptador (List<lista_atletas> atletas_lista ){
+    private List<cl_lista_atletas> atletas_lista;
+    public cl_lista_atletas_adaptador(List<cl_lista_atletas> atletas_lista ){
         this.atletas_lista = atletas_lista;
     }
 
@@ -33,7 +33,7 @@ public class lista_atletas_adaptador extends RecyclerView.Adapter<lista_atletas_
 
     @Override
     public void onBindViewHolder(@NonNull Lista_Atletas_ViewHolder lista_atletas_viewHolder, int i) {
-        lista_atletas lista = atletas_lista.get(i);
+        cl_lista_atletas lista = atletas_lista.get(i);
         lista_atletas_viewHolder.tv_atleta_nombre.setText(lista.getNombre());
         lista_atletas_viewHolder.tv_atleta_deporte.setText(lista.getDeporte());
     }
@@ -59,7 +59,7 @@ public class lista_atletas_adaptador extends RecyclerView.Adapter<lista_atletas_
         public void onClick(View v) {
             Context context = v.getContext();
             int position = getAdapterPosition();
-            lista_atletas lista = atletas_lista.get(position);
+            cl_lista_atletas lista = atletas_lista.get(position);
             Intent intent = new Intent(v.getContext(), Activity_Administrador_Ver_Atletas.class);
             intent.putExtra(NOMBRE, lista.getNombre());
             intent.putExtra(DEPORTE, lista.getDeporte());

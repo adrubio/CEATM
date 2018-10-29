@@ -166,6 +166,7 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
                 ///...
 
 
+
                 //Si se hizo correctamente, salir de la actividad
                 Toast.makeText(this, "Atleta creado exitosamente", Toast.LENGTH_SHORT).show();
                 finish();
@@ -190,7 +191,6 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
         nacimiento_dia = dayOfMonth;
         nacimiento_mes = monthOfYear;
         nacimiento_ano = year;
-
         tv_edad.setText(String.format("%d",edad_actual));
     }
 
