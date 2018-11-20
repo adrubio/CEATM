@@ -11,35 +11,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_begin="53dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_izquierda2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.87104625" />
+        app:layout_constraintGuide_begin="358dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_centro_absoluto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_begin="206dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_bottomnav3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90895295" />
+        app:layout_constraintGuide_begin="599dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_bottomnav2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="599dp" />
+        app:layout_constraintGuide_end="60dp" />
 
     <TextView
         android:id="@+id/tv_Ranking"
