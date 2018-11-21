@@ -22,7 +22,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lista_estadisticas_adaptador.Lista_Estadisticas_ViewHolder>{
+public class adt_atleta_estadisticas extends RecyclerView.Adapter<adt_atleta_estadisticas.Lista_Estadisticas_ViewHolder>{
 
     public static final String NOMBRE = "NOMBRE";
     public static final String DEPORTE = "DEPOERTE";
@@ -31,8 +31,8 @@ public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lis
 
 
     // Nombre de clase de Java
-    private List<cl_lista_estadisticas> estadisticas_lista;
-    public cl_lista_estadisticas_adaptador(List<cl_lista_estadisticas> estadisticas_lista ){
+    private List<datos_lista_estadisticas> estadisticas_lista;
+    public adt_atleta_estadisticas(List<datos_lista_estadisticas> estadisticas_lista ){
         this.estadisticas_lista = estadisticas_lista;
     }
 
@@ -47,7 +47,7 @@ public class cl_lista_estadisticas_adaptador extends RecyclerView.Adapter<cl_lis
 
     @Override
     public void onBindViewHolder(@NonNull Lista_Estadisticas_ViewHolder Lista_Estadisticas_ViewHolder, int i) {
-        //cl_lista_estadisticas lista = estadisticas_lista.get(i);
+        //datos_lista_estadisticas lista = estadisticas_lista.get(i);
     }
 
     @Override

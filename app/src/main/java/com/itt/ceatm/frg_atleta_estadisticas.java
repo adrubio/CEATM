@@ -23,9 +23,9 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
 
     private static final String TAG="atleta_estatisticas";
     //Lista de atletas
-    public ArrayList<cl_lista_estadisticas> lista_est;
+    public ArrayList<datos_lista_estadisticas> lista_est;
     public RecyclerView rcc_lista_estadisticas;
-    public cl_lista_estadisticas_adaptador adaptador_lista_estadisticas;
+    public adt_atleta_estadisticas adaptador_lista_estadisticas;
 
 
     @Nullable
@@ -55,26 +55,26 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
     public void data(){
         lista_est = new ArrayList<>();
         //Cantidad de graficas,
-        //lista_est.add(new cl_lista_estadisticas("R4",3,50));
+        //lista_est.add(new datos_lista_estadisticas("R4",3,50));
         //First graphic
-        lista_est.add(new cl_lista_estadisticas("R1",0,40));
-        lista_est.add(new cl_lista_estadisticas("R2",1,40));
-        lista_est.add(new cl_lista_estadisticas("R3",2,30));
-        lista_est.add(new cl_lista_estadisticas("R4",3,50));
-        lista_est.add(new cl_lista_estadisticas("R5",4,70));
-        lista_est.add(new cl_lista_estadisticas("R6",5,30));
+        lista_est.add(new datos_lista_estadisticas("R1",0,40));
+        lista_est.add(new datos_lista_estadisticas("R2",1,40));
+        lista_est.add(new datos_lista_estadisticas("R3",2,30));
+        lista_est.add(new datos_lista_estadisticas("R4",3,50));
+        lista_est.add(new datos_lista_estadisticas("R5",4,70));
+        lista_est.add(new datos_lista_estadisticas("R6",5,30));
 
         //Second graphic
-        lista_est.add(new cl_lista_estadisticas("Q1",0,50));
-        lista_est.add(new cl_lista_estadisticas("Q2",1,30));
-        lista_est.add(new cl_lista_estadisticas("Q3",2,20));
-        lista_est.add(new cl_lista_estadisticas("Q4",3,70));
-        lista_est.add(new cl_lista_estadisticas("Q5",4,50));
-        lista_est.add(new cl_lista_estadisticas("Q6",5,40));
+        lista_est.add(new datos_lista_estadisticas("Q1",0,50));
+        lista_est.add(new datos_lista_estadisticas("Q2",1,30));
+        lista_est.add(new datos_lista_estadisticas("Q3",2,20));
+        lista_est.add(new datos_lista_estadisticas("Q4",3,70));
+        lista_est.add(new datos_lista_estadisticas("Q5",4,50));
+        lista_est.add(new datos_lista_estadisticas("Q6",5,40));
     }
 
     public void iniciar_adaptador_estadisticas(){
-        adaptador_lista_estadisticas = new cl_lista_estadisticas_adaptador(lista_est);
+        adaptador_lista_estadisticas = new adt_atleta_estadisticas(lista_est);
         rcc_lista_estadisticas.setAdapter(adaptador_lista_estadisticas);
     }
 
