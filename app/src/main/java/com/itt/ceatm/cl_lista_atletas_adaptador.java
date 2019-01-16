@@ -22,8 +22,6 @@ public class cl_lista_atletas_adaptador extends RecyclerView.Adapter<cl_lista_at
         this.atletas_lista = atletas_lista;
     }
 
-
-
     @NonNull
     @Override
     public Lista_Atletas_ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

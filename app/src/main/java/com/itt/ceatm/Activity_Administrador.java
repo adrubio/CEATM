@@ -13,6 +13,10 @@ import android.widget.Spinner;
 public class Activity_Administrador extends AppCompatActivity {
 
 
+    public static final String lusuarios = "lusuarios";
+    //String usUsuario;
+    //Bundle bundle = new Bundle();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,9 @@ public class Activity_Administrador extends AppCompatActivity {
 
 //        cambiar = (Button) findViewById(R.id.btn_cambiar);
         //        cambiar = (Button) findViewById(R.id.btn_cambiar);
+
+        //usUsuario = getIntent().getStringExtra("lusuarios");
+        //bundle.putString("USUARIO",usUsuario);
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -35,12 +42,15 @@ public class Activity_Administrador extends AppCompatActivity {
 
                     switch (item.getItemId()) {
                         case R.id.bnav_administrador_atletas:
+                            //bundle.putString("USUARIO",usUsuario);
                             selectedFragment = new frg_administrador_atletas();
                             break;
                         case R.id.bnav_administrador_entrenadores:
+                            //bundle.putString("USUARIO",usUsuario);
                             selectedFragment = new frg_atleta_estadisticas();
                             break;
                         case R.id.bnav_administrador_competencias:
+                            //bundle.putString("USUARIO",usUsuario);
                             selectedFragment = new frg_admin_competencias();
                             break;
                     }

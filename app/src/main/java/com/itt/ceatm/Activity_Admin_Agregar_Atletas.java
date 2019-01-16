@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.FragmentManager;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -28,38 +29,33 @@ import static android.R.layout.simple_spinner_item;
 public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements AdapterView.OnItemSelectedListener, DatePickerDialog.OnDateSetListener {
 
 
-    MaterialSpinner sp_deporte;
-    MaterialSpinner sp_entrenador;
-    MaterialSpinner sp_modalidad;
-    MaterialSpinner sp_municipio;
-    EditText et_nombre;
-    EditText et_edad;
+    MaterialSpinner sp_deporte, sp_modalidad, sp_municipio, sp_entrenador;
+    EditText et_usuario, et_contrasena, et_nombre, et_apellido_paterno, et_apellido_materno;
     Button btn_nacimiento;
-    TextInputLayout ti_nombre;
-    TextInputLayout ti_edad;
-    TextView tv_nacimiento;
-    TextView tv_edad;
+    TextInputLayout ti_nombre, ti_edad;
+    TextView tv_nacimiento, tv_edad;
 
     //Variables para mandar a la base de datos
-    int edad_actual;
-    int nacimiento_dia;
-    int nacimiento_mes;
-    int nacimiento_ano;
+    int edad_actual,nacimiento_dia, nacimiento_mes, nacimiento_ano;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_agregar_atletas);
 
+        et_usuario = (EditText) findViewById(R.id.et_Usuario);
+        et_contrasena = (EditText) findViewById(R.id.et_Contrasena);
+        et_nombre = (EditText) findViewById(R.id.et_Nombre);
+        ti_nombre = (TextInputLayout) findViewById(R.id.ti_Nombre);
+        et_apellido_paterno = (EditText) findViewById(R.id.et_Apellido_Paterno);
+        et_apellido_materno = (EditText) findViewById(R.id.et_Apellido_Materno);
+        btn_nacimiento = (Button) findViewById(R.id.btn_Nacimiento);
+        tv_nacimiento = (TextView) findViewById(R.id.tv_Nacimiento);
+        tv_edad = (TextView) findViewById(R.id.tv_Edad);
         sp_deporte = (MaterialSpinner) findViewById(R.id.sp_Deporte);
         sp_modalidad = (MaterialSpinner) findViewById(R.id.sp_Modalidad);
         sp_entrenador = (MaterialSpinner) findViewById(R.id.sp_Entrenador);
         sp_municipio = (MaterialSpinner) findViewById(R.id.sp_Municipio);
-        et_nombre = (EditText) findViewById(R.id.et_Nombre);
-        ti_nombre = (TextInputLayout) findViewById(R.id.ti_Nombre);
-        btn_nacimiento = (Button) findViewById(R.id.btn_Nacimiento);
-        tv_nacimiento = (TextView) findViewById(R.id.tv_Nacimiento);
-        tv_edad = (TextView) findViewById(R.id.tv_Edad);
 
         //Creacion de listas para los datos
         ArrayList<String> datos_Deportes = new ArrayList<>();
@@ -69,6 +65,7 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
 
 
         //Llenado de datos
+
         datos_Deportes.add("Tiro con arco");
         datos_Deportes.add("Atletismo");
         datos_Deportes.add("Lanzamiento con bala");
@@ -164,9 +161,6 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
             case R.id.btn_Guardar:
                 //Proceso de comprobacion de campos y mandar datos a la base de datos
                 ///...
-
-
-
                 //Si se hizo correctamente, salir de la actividad
                 Toast.makeText(this, "Atleta creado exitosamente", Toast.LENGTH_SHORT).show();
                 finish();

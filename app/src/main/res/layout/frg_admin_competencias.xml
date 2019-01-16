@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Admin_Agregar_Atletas">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_centro_absoluto4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gd_bottomnav6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90895295" />
+
+    <ScrollView
+        android:layout_width="340dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/gd_bottomnav6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.588">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Informacion de competencias"
+                android:textAlignment="center"
+                android:textColor="@color/color_negro"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_Nombre_Competencias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:textColorHint="@color/colorPrimario"
+                app:boxBackgroundColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.658"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="130dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_Nombre_Competencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimario"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/sp_Deporte_Competencias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ms_arrowColor="@color/colorPrimario"
+                app:ms_arrowSize="20dp"
+                app:ms_baseColor="@color/colorPrimario"
+                app:ms_floatingLabelColor="@color/colorPrimario"
+                app:ms_floatingLabelText="Deporte"
+                app:ms_highlightColor="@color/color_negro"
+                app:ms_hint="Seleccionar deporte..."
+                app:ms_thickness="0.8dp" />
+
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/sp_Modalidad_Competencias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ms_arrowColor="@color/colorPrimario"
+                app:ms_arrowSize="20dp"
+                app:ms_baseColor="@color/colorPrimario"
+                app:ms_floatingLabelColor="@color/colorPrimario"
+                app:ms_floatingLabelText="Modalidad"
+                app:ms_highlightColor="@color/color_negro"
+                app:ms_hint="Seleccionar modalidad..."
+                app:ms_thickness="1dp" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_Lugar_Competencias"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Lugar"
+                app:boxStrokeColor="@color/colorPrimario">
+
+                <EditText
+                    android:id="@+id/et_Lugar_Competencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:ems="10"
+                    android:inputType="textMultiLine" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_Fecha_Competencias"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/est_boton_azul"
+                android:onClick="onClick"
+                android:text="Seleccionar fecha del evento"
+                android:textColor="@color/color_blanco" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tt_Fecha_Competencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fecha"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_negro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tt_Hora_Competencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hora"
+                    android:textAlignment="center"
+                    android:textColor="@color/color_negro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_Fecha_Competencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_Hora_Competencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Atletas"
+                android:textAlignment="center"
+                android:textColor="@color/color_negro"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcc_admin_competencias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

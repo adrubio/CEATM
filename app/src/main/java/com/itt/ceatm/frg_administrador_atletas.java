@@ -1,5 +1,7 @@
 package com.itt.ceatm;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +28,6 @@ public class frg_administrador_atletas extends Fragment {
     public List<cl_lista_atletas> lista_atl;
     public RecyclerView rcc_lista_atletas;
     public cl_lista_atletas_adaptador adaptador_lista_atletas;
-
-
 
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_admin_atletas, container, false);
@@ -33,11 +42,9 @@ public class frg_administrador_atletas extends Fragment {
         return view;
     }
 
-
     @Override
     public void onActivityCreated (Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
 
 
@@ -47,7 +54,6 @@ public class frg_administrador_atletas extends Fragment {
 
 
     }
-
 
     public void onViewCreated(View view, Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
@@ -70,3 +76,5 @@ public class frg_administrador_atletas extends Fragment {
     }
 
 }
+
+

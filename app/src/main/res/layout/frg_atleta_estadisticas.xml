@@ -6,98 +6,204 @@
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="25dp">
 
+    <Button
+        android:id="@+id/btn_Atleta_Estadisticas_Desde"
+        android:layout_width="81dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/est_boton_azul"
+        android:text="Desde"
+        android:textColor="@color/color_blanco"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Atletas_Rango_Desde"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Atleta_Estadisticas_Hasta"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ranking2" />
+
+    <Button
+        android:id="@+id/btn_Atleta_Estadisticas_Hasta"
+        android:layout_width="81dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/est_boton_azul"
+        android:text="Hasta"
+        android:textColor="@color/color_blanco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_Atleta_Estadisticas_Desde"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ranking2" />
+
+    <TextView
+        android:id="@+id/tv_Atletas_Rango_Hasta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="-"
+        android:textAlignment="center"
+        android:textColor="@color/color_negro"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Atleta_Estadisticas_Hasta"
+        app:layout_constraintStart_toStartOf="@+id/btn_Atleta_Estadisticas_Hasta"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Atleta_Estadisticas_Hasta" />
+
+    <TextView
+        android:id="@+id/tv_Atletas_Rango_Desde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="-"
+        android:textAlignment="center"
+        android:textColor="@color/color_negro"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Atleta_Estadisticas_Desde"
+        app:layout_constraintStart_toStartOf="@+id/btn_Atleta_Estadisticas_Desde"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Atleta_Estadisticas_Desde" />
+
     <android.support.constraint.Guideline
         android:id="@+id/gd_derecha2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_begin="53dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_izquierda2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.87104625" />
+        app:layout_constraintGuide_begin="358dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_centro_absoluto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_begin="206dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_bottomnav3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90895295" />
+        app:layout_constraintGuide_begin="599dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/gd_bottomnav2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="599dp" />
+        app:layout_constraintGuide_end="60dp" />
 
     <TextView
         android:id="@+id/tv_Ranking"
         android:layout_width="114dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Ranking MX"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_Ranking2"
+        android:layout_width="239dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        android:text="Seleccionar rango de fecha"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ranking" />
 
     <TextView
         android:id="@+id/tv_ranking"
         android:layout_width="111dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="120dp"
         android:text="1ro"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.676"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_ranking2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ranking" />
 
     <TextView
         android:id="@+id/tv_ranking2"
         android:layout_width="111dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="16dp"
         android:text="Bala"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintEnd_toStartOf="@+id/tv_ranking"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Ranking" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rcc_atletas_estadisticas"
-        android:layout_width="343dp"
+    <ScrollView
+        android:layout_width="377dp"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/gd_bottomnav2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ranking" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Atletas_Rango_Desde"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_Atleta_Estadisticas_Puntaje"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chart_Atleta_Estadisticas_Posicion"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>
