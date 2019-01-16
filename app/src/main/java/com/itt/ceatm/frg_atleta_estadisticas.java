@@ -131,7 +131,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
     public void cargar_valores_Puntajes(){
 
         puntuaciones1 = new ArrayList<>();
-
+//---------------------------------------------------------------------------------------
         //puntuaciones1.add(new Entry(lista.getCompetencia_Index(),lista.getPuntuacion()));
         puntuaciones1.add(new Entry(0,20f));
         puntuaciones1.add(new Entry(1,30f));
@@ -203,7 +203,8 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
         List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
         dataSets.add(set1);
 
-        //Formatter
+        //Formatter------------------------
+
         final String[] quarters = new String[] { "Q1", "Q2", "Q3", "Q4", "Q5", "Q6" };
 
         IAxisValueFormatter formatter = new IAxisValueFormatter() {
@@ -253,7 +254,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
     public void cargar_valores_Posiciones(){
 
         posiciones = new ArrayList<>();
-
+//-------------------------------------------------------------------
         //puntuaciones1.add(new Entry(lista.getCompetencia_Index(),lista.getPuntuacion()));
         posiciones.add(new BarEntry(0,1f));
         posiciones.add(new BarEntry(1,2f));
@@ -311,7 +312,8 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
           yAxis.setGranularity(1f);
 //
 //
-//        //Formatter
+//        //Formatter------------------------------------------------
+
 //        final String[] quarters = new String[] { "Q1", "Q2", "Q3", "Q4", "Q5", "Q6" };
 //
 //        IAxisValueFormatter formatter = new IAxisValueFormatter() {
