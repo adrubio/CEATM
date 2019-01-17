@@ -131,6 +131,6 @@ public class frg_admin_competencias extends Fragment {
         lista_admin_comp.add(new datos_admin_competencias("Daniel Sanchez Cuevas", "G. Artistica","generica"));
         lista_admin_comp.add(new datos_admin_competencias("Alexa Luna Contreras", "TKD","generica"));
         lista_admin_comp.add(new datos_admin_competencias("Paul Carillo Mendez", "Natacion","generica"));
-        lista_admin_comp.add(new datos_admin_competencias("Karen Mendoza Galindo", "Boxeo","generica"));
+        lista_admin_comp.add(new datos_admin_competencias("Karen Mendoza Galindo", "Boxeo","generiaca"));
     }
 }
