@@ -158,7 +158,7 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
 
                 break;
 
-            case R.id.btn_Guardar:
+            case R.id.btn_Agregar_Atletas_Guardar:
                 //Proceso de comprobacion de campos y mandar datos a la base de datos
                 ///...
                 //Si se hizo correctamente, salir de la actividad
@@ -167,7 +167,7 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
 
                 break;
 
-            case R.id.btn_regresar_agregar:
+            case R.id.btn_Agregar_Atleta_Regresar:
                 finish();
                 break;
         }

@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class adt_atletas_comptetencias extends RecyclerView.Adapter<adt_atletas_
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
 
-            comp = itemView.findViewById(R.id.atleta_competencia_competencia);
+            comp = itemView.findViewById(R.id.atleta_competencia_competencia_nombre);
             punt1 = itemView.findViewById(R.id.atleta_competencia_opcion1);
             punt2 = itemView.findViewById(R.id.atleta_competencia_opcion2);
         }

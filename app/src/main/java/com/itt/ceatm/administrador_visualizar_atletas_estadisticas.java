@@ -12,6 +12,6 @@ public class administrador_visualizar_atletas_estadisticas extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_visualizar_administrador_atleta_estadisticas, container, false);
+        return inflater.inflate(R.layout.frg_atleta_estadisticas, container, false);
     }
 }

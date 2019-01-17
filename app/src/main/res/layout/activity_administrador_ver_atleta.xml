@@ -22,7 +22,7 @@
         android:id="@+id/fragment_container_visualizar_atleta"
         android:layout_width="411dp"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_nav_atletas"
+        android:layout_above="@id/bottom_nav_admin_ver_atletas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -31,7 +31,7 @@
 
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottom_nav_atletas"
+        android:id="@+id/bottom_nav_admin_ver_atletas"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="?android:attr/windowBackground"

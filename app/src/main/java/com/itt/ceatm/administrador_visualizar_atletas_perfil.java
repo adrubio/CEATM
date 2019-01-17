@@ -12,6 +12,6 @@ public class administrador_visualizar_atletas_perfil extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.frg_admin_atleta_perfil, container, false);
+        return inflater.inflate(R.layout.frg_atleta_perfil, container, false);
     }
 }

@@ -1,6 +1,7 @@
 package com.itt.ceatm;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
@@ -10,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -21,20 +23,20 @@ import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
+import static android.R.layout.simple_spinner_item;
+
 public class frg_admin_competencias extends Fragment {
 
-    MaterialSpinner sp_deporte_competencias;
-    MaterialSpinner sp_modalidad_competencias;
-    EditText et_nombre_competencias;
-    EditText et_lugar_competencias;
+    MaterialSpinner sp_estado_competencias, sp_municipio_competencias;
+    EditText et_nombre_competencias, et_lugar_competencias;
     Button btn_fecha_competencias;
     TextInputLayout ti_nombre;
     TextInputLayout ti_edad;
-    TextView tv_fecha_competencias;
-    TextView tv_hora_competencias;
+    TextView tv_fecha_competencias, tv_hora_competencias;
     RadioGroup rg_atletas_competencias;
 
     public ArrayList<datos_admin_competencias> lista_admin_comp;
@@ -50,8 +52,8 @@ public class frg_admin_competencias extends Fragment {
 
 
         et_nombre_competencias = (EditText)view.findViewById(R.id.et_Nombre_Competencias);
-        sp_deporte_competencias = (MaterialSpinner)view.findViewById(R.id.sp_Deporte_Competencias);
-        sp_modalidad_competencias = (MaterialSpinner)view.findViewById(R.id.sp_Modalidad_Competencias);
+        sp_estado_competencias = (MaterialSpinner)view.findViewById(R.id.sp_Estado_Competencias);
+        sp_municipio_competencias = (MaterialSpinner)view.findViewById(R.id.sp_Municipio_Competencias);
         et_lugar_competencias = (EditText)view.findViewById(R.id.et_Lugar_Competencias);
         btn_fecha_competencias = (Button) view.findViewById(R.id.btn_Fecha_Competencias);
         tv_fecha_competencias = (TextView) view.findViewById(R.id.tv_Fecha_Competencias);
@@ -72,19 +74,74 @@ public class frg_admin_competencias extends Fragment {
                 "Cancelar"
         );
 
+
+        //Spinners
+        //---------------------------------------------------------------------------------------------
+        //Creacion de listas para los datos
+        ArrayList<String> datos_Deportes = new ArrayList<>();
+        ArrayList<String> datos_Modalidades = new ArrayList<>();
+
+        datos_Deportes.add("Tiro con arco");
+        datos_Deportes.add("Atletismo");
+        datos_Deportes.add("Lanzamiento con bala");
+
+        datos_Modalidades.add("A");
+        datos_Modalidades.add("B");
+        datos_Modalidades.add("C");
+
+        ArrayAdapter deportes_adaptador = new ArrayAdapter(getContext(), simple_spinner_item, datos_Deportes);
+        ArrayAdapter modalidad_adaptador = new ArrayAdapter(getContext(), simple_spinner_item, datos_Modalidades);
+
+        //Hace que se vea como un drop down, si no se le pone, los items estan muy juntos
+        deportes_adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        modalidad_adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        sp_estado_competencias.setAdapter(deportes_adaptador);
+        sp_municipio_competencias.setAdapter(modalidad_adaptador);
+        //---------------------------------------------------------------------------------------------
+
         // Assign values
-        fecha_competencias.startAtCalendarView();
-        fecha_competencias.set24HoursMode(false);
+
+        //fecha_competencias.set24HoursMode(false);
 //                fecha_competencias.setMinimumDateTime(new GregorianCalendar(2015, Calendar.JANUARY, 1).getTime());
 //                fecha_competencias.setMaximumDateTime(new GregorianCalendar(2025, Calendar.DECEMBER, 31).getTime());
         Calendar min = Calendar.getInstance();
 
+        //Date mini = new Date(Calendar.YEAR,Calendar.MONTH+1,Calendar.DAY_OF_MONTH+1);
+        Date mini = new Date();
+//        mini.setYear(min.get(Calendar.YEAR - 1900));
+//        mini.setMonth(min.get(Calendar.MONTH + 1));
+//        mini.setDate(min.get(Calendar.DAY_OF_MONTH));
+//        mini.setHours(0);
+//        mini.setMinutes(0);
+//        mini.setSeconds(0);
+
+        //Date firstDate3 = new Date((int) Calendar.YEAR, (int) Calendar.MONTH +1, (int) Calendar.DAY_OF_MONTH, (int) 0, (int) 0, (int) 0);
+        //fecha_competencias.setMinimumDateTime(firstDate3);
+
         //Restringir fecha para que no ponga una competencia en un dia anterior al actual
+        //fecha_competencias.setMinimumDateTime(min.getTime());
+
         fecha_competencias.setMinimumDateTime(min.getTime());
 
-        fecha_competencias.setDefaultHourOfDay(15);
-        fecha_competencias.setDefaultMinute(20);
+//       new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                // Magic here
+//                Calendar min = Calendar.getInstance();
+//                fecha_competencias.setMinimumDateTime(min.getTime());
+//            }
+//        }, 3000); // Millisecond 1000 = 1 sec
 
+//        fecha_competencias.setMinimumDateTime(min.getTime());
+
+        // La unica manera en que lo pude hacer funcionar, sin eso me da error
+
+
+        //fecha_competencias.setDefaultDay(Calendar.getInstance().get(Calendar.DAY_OF_MONTH+3));
+        fecha_competencias.setDefaultHourOfDay(24);
+        fecha_competencias.setDefaultMinute(59);
+        fecha_competencias.startAtCalendarView();
 
         fecha_competencias.setOnButtonClickListener(new SwitchDateTimeDialogFragment.OnButtonClickListener() {
             @Override
@@ -92,15 +149,22 @@ public class frg_admin_competencias extends Fragment {
                 // Date is get on positive button click
                 // Do something
 
-                //tv_fecha_competencias.setText(String.format("%d / %d / %d",dayOfMonth,monthOfYear,year));
-                //tv_fecha_competencias.setText(String.valueOf(date));
-                tv_fecha_competencias.setText(String.format("%d / %d / %d",date.getDate(),date.getMonth()+1,date.getYear()+1900));
-                tv_hora_competencias.setText(String.format("%d : %d ", date.getHours(),date.getMinutes()));
+                if (date.getDate() == Calendar.getInstance().get(Calendar.DAY_OF_MONTH))
+                {
+                    Toast.makeText(getContext(), "No es posible crear una competencia para hoy", Toast.LENGTH_SHORT).show();
+                    fecha_competencias.setDefaultDay(Calendar.DAY_OF_MONTH + 1);
+                }
 
+                else
+                    {
+                    //tv_fecha_competencias.setText(String.format("%d / %d / %d",dayOfMonth,monthOfYear,year));
+                    //tv_fecha_competencias.setText(String.valueOf(date));
+                    tv_fecha_competencias.setText(String.format("%d / %d / %d",date.getDate(),date.getMonth()+1,date.getYear()+1900));
+                    tv_hora_competencias.setText(String.format("%d : %d ", date.getHours(),date.getMinutes()));
 
-                Toast.makeText(getContext(), "sup", Toast.LENGTH_SHORT).show();
-
-
+                    //Prueba de que llego
+                    //Toast.makeText(getContext(), "sup", Toast.LENGTH_SHORT).show();
+                }
 
             }
 

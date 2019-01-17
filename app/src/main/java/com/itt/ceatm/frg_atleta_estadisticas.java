@@ -34,13 +34,16 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.listener.ChartTouchListener;
 import com.github.mikephil.charting.listener.OnChartGestureListener;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -168,6 +171,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
         set1.setValueTypeface(Typeface.DEFAULT_BOLD);
         set1.setFillAlpha(50);
 
+
         //Limit Line Promedio
         LimitLine promedio = new LimitLine(promedio_valor, "Promedio");
         promedio.setLineColor(Color.BLUE);
@@ -271,11 +275,15 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
         chart_atleta_estadisticas_posicion.getAxisRight().setEnabled(false);
         chart_atleta_estadisticas_posicion.getLegend().setEnabled(false);
         chart_atleta_estadisticas_posicion.getDescription().setEnabled(false);
+        chart_atleta_estadisticas_posicion.setExtraOffsets(0, 10, 0, 0);
         //chart_atleta_estadisticas_posicion.setHighlightPerTapEnabled(true);
 
         BarDataSet puntajes_set = new BarDataSet(posiciones, "Posiciones");
 
         puntajes_set.setBarBorderColor(R.color.colorPrimario);
+        puntajes_set.setValueFormatter(new MyValueFormatter());
+        //Ocultar los valores de cada barra
+        //puntajes_set.setDrawValues(false);
 //        //puntajes_set.setColors(new int[] { R.color.colorPrimary, R.color.colorPrimario, R.color.color_negro, R.color.colorAccent }, frg_atleta_estadist   icas.this.getContext());
 ////        puntajes_set.setColors(ColorTemplate.VORDIPLOM_COLORS);
 //        puntajes_set.setLineWidth(5f);
@@ -287,6 +295,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
 //        puntajes_set.setValueTextColor(Color.RED);
 //        puntajes_set.setValueTypeface(Typeface.DEFAULT_BOLD);
 //        puntajes_set.setFillAlpha(50);
+
 //
 //      //
         YAxis yAxis = chart_atleta_estadisticas_posicion.getAxisLeft();
@@ -314,34 +323,36 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
 //
 //        //Formatter------------------------------------------------
 
-//        final String[] quarters = new String[] { "Q1", "Q2", "Q3", "Q4", "Q5", "Q6" };
-//
-//        IAxisValueFormatter formatter = new IAxisValueFormatter() {
-//
-//            @Override
-//            public String getFormattedValue(float value, AxisBase axis) {
-//                return quarters[(int) value];
-//            }
-//
-//            // we don't draw numbers, so no decimal digits needed
-//            public int getDecimalDigits() {  return 0; }
-//        };
+        final String[] quarters = new String[] { "Juegos 1", "J2", "J3", "J4", "J5", "J6" };
+
+        IAxisValueFormatter formatter = new IAxisValueFormatter() {
+
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return quarters[(int) value];
+            }
+
+            // we don't draw numbers, so no decimal digits needed
+            public int getDecimalDigits() {  return 0; }
+        };
+        //------------------------------------------------
 //
             XAxis xAxis = chart_atleta_estadisticas_posicion.getXAxis();
             xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
-//        xAxis.setValueFormatter(formatter);
-////            xAxis.setTextSize(10f);
-//        xAxis.setTextColor(Color.RED);
+        xAxis.setValueFormatter(formatter);
+            xAxis.setTextSize(10f);
+        xAxis.setTextColor(Color.BLUE);
 //        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
 
 //        //Darle margen a los labels de X con respecto al chart
-//        xAxis.setYOffset(15f);
+            xAxis.setYOffset(15f);
 //
 
 //
             BarData puntajes_data = new BarData(puntajes_set);
             chart_atleta_estadisticas_posicion.setData(puntajes_data);
 
+            //Esto es para tipo offset pero horizontal
 //        chart_atleta_estadisticas_posicion.getXAxis().setSpaceMin(0.5f);
 
 //        //Margen entre el ultimo valor del Xaxis y el rightAxis
@@ -365,6 +376,60 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
         //chart_atleta_estadisticas_posicion.getAxisLeft().setDrawGridLines(false);
 
         chart_atleta_estadisticas_posicion.invalidate(); // refresh
+    }
+
+    public class MyValueFormatter implements IValueFormatter {
+
+        private DecimalFormat mFormat;
+
+        public MyValueFormatter() {
+            mFormat = new DecimalFormat("###,###,##0"); // No usar decimales
+        }
+
+        @Override
+        public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
+            // write your logic here
+
+            int valor = Math.round(value);
+            String sufijo = "";
+
+            //Switch para saber que sufijo ponerle al Label con respecto al valor de posicion
+            switch (valor){
+
+                case 1:
+                    sufijo = "ro";
+                    break;
+                case 2:
+                    sufijo = "do";
+                    break;
+                case 3:
+                    sufijo = "ro";
+                    break;
+                case 4:
+                    sufijo = "to";
+                    break;
+                case 5:
+                    sufijo = "to";
+                    break;
+                case 6:
+                    sufijo = "ro";
+                    break;
+                case 7:
+                    sufijo = "mo";
+                    break;
+                case 8:
+                    sufijo = "vo";
+                    break;
+                case 9:
+                    sufijo = "no";
+                    break;
+                case 10:
+                    sufijo = "mo";
+                    break;
+            }
+
+            return mFormat.format(value) + sufijo; // e.g. append a dollar-sign
+        }
     }
 
     @Override
@@ -444,7 +509,9 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
 
     @Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-        Toast.makeText(getContext(), "Fecha xd", Toast.LENGTH_SHORT).show();
+        //Prueba de que si llega
+        //Toast.makeText(getContext(), "Fecha xd", Toast.LENGTH_SHORT).show();
+        monthOfYear++; //Para aumentarle 1, ya que se obtiene un valor del 0 al 11
 
         switch (view.getTag()) {
             case "Desde":

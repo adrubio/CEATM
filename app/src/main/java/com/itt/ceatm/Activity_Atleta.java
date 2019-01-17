@@ -1,6 +1,5 @@
 package com.itt.ceatm;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,11 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
-
-import java.util.Calendar;
 
 public class Activity_Atleta extends AppCompatActivity implements AdapterView.OnItemSelectedListener, DatePickerDialog.OnDateSetListener{
 
@@ -38,7 +34,7 @@ public class Activity_Atleta extends AppCompatActivity implements AdapterView.On
         bundle.putString("USUARIO",usUsuario);
         perfil.setArguments(bundle);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_atletas);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin_ver_atletas);
         tv_atletas_rango_hasta = findViewById(R.id.tv_Atletas_Rango_Hasta);
         tv_atletas_rango_desde = findViewById(R.id.tv_Atletas_Rango_Desde);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

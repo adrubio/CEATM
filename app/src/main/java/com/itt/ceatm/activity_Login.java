@@ -3,9 +3,12 @@ package com.itt.ceatm;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
@@ -40,6 +43,8 @@ public class activity_Login extends AppCompatActivity implements View.OnClickLis
         contrasena = findViewById(R.id.password2);
     }
 
+
+
     @Override
     public void onClick(View v) {
 
@@ -48,6 +53,15 @@ public class activity_Login extends AppCompatActivity implements View.OnClickLis
                 iniciarSesion();
                 break;
         }
+
+        contrasena.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    iniciarSesion();
+                }
+                return false;
+            }
+        });
     }
 
     public void iniciarSesion(){

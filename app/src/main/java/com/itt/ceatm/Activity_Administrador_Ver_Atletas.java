@@ -6,12 +6,14 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.itt.ceatm.cl_lista_atletas_adaptador.NOMBRE;
 import static com.itt.ceatm.cl_lista_atletas_adaptador.DEPORTE;
 
-public class Activity_Administrador_Ver_Atletas extends AppCompatActivity {
+public class Activity_Administrador_Ver_Atletas extends AppCompatActivity implements View.OnClickListener {
 
     private  String nombre;
     private  String deporte;
@@ -26,7 +28,7 @@ public class Activity_Administrador_Ver_Atletas extends AppCompatActivity {
 //        cambiar = (Button) findViewById(R.id.btn_cambiar);
         //        cambiar = (Button) findViewById(R.id.btn_cambiar);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_atletas);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav_admin_ver_atletas);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_visualizar_atleta,new administrador_visualizar_atletas_perfil()).commit();
@@ -68,4 +70,8 @@ public class Activity_Administrador_Ver_Atletas extends AppCompatActivity {
                 }
             };
 
+    @Override
+    public void onClick(View v) {
+        finish();
+    }
 }

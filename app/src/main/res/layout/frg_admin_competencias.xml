@@ -78,29 +78,29 @@
 
 
             <fr.ganfra.materialspinner.MaterialSpinner
-                android:id="@+id/sp_Deporte_Competencias"
+                android:id="@+id/sp_Estado_Competencias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:ms_arrowColor="@color/colorPrimario"
                 app:ms_arrowSize="20dp"
                 app:ms_baseColor="@color/colorPrimario"
                 app:ms_floatingLabelColor="@color/colorPrimario"
-                app:ms_floatingLabelText="Deporte"
+                app:ms_floatingLabelText="Estado"
                 app:ms_highlightColor="@color/color_negro"
-                app:ms_hint="Seleccionar deporte..."
+                app:ms_hint="Seleccionar estado..."
                 app:ms_thickness="0.8dp" />
 
             <fr.ganfra.materialspinner.MaterialSpinner
-                android:id="@+id/sp_Modalidad_Competencias"
+                android:id="@+id/sp_Municipio_Competencias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:ms_arrowColor="@color/colorPrimario"
                 app:ms_arrowSize="20dp"
                 app:ms_baseColor="@color/colorPrimario"
                 app:ms_floatingLabelColor="@color/colorPrimario"
-                app:ms_floatingLabelText="Modalidad"
+                app:ms_floatingLabelText="Municipio"
                 app:ms_highlightColor="@color/color_negro"
-                app:ms_hint="Seleccionar modalidad..."
+                app:ms_hint="Seleccionar municipio..."
                 app:ms_thickness="1dp" />
 
 

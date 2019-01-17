@@ -7,7 +7,7 @@
     tools:context=".Activity_Admin_Agregar_Atletas">
 
     <ImageButton
-        android:id="@+id/btn_regresar_agregar"
+        android:id="@+id/btn_Agregar_Atleta_Regresar"
         android:layout_width="57dp"
         android:layout_height="54dp"
         android:background="@color/transparent"
@@ -330,12 +330,12 @@
                     app:ms_floatingLabelColor="@color/colorPrimario"
                     app:ms_floatingLabelText="Entrenador"
                     app:ms_highlightColor="@color/color_negro"
-                    app:ms_hint="Seleccionar @string/error_field_requiredntrenador"
+                    app:ms_hint="Seleccionar entrenador... "
                     app:ms_thickness="0.8dp" />
             </LinearLayout>
 
             <Button
-                android:id="@+id/btn_Guardar"
+                android:id="@+id/btn_Agregar_Atletas_Guardar"
                 android:layout_width="201dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
