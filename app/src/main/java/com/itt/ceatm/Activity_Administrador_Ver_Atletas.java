@@ -56,10 +56,10 @@ public class Activity_Administrador_Ver_Atletas extends AppCompatActivity implem
 
                     switch (item.getItemId()) {
                         case R.id.nav_administrador_atletas_estadisticas:
-                            selectedFragment = new administrador_visualizar_atletas_estadisticas();
+                            selectedFragment = new frg_atleta_estadisticas();
                             break;
                         case R.id.nav_administrador_atletas_perfil:
-                            selectedFragment = new administrador_visualizar_atletas_perfil();
+                            selectedFragment = new frg_atleta_perfil();
                             break;
                     }
 
