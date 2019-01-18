@@ -568,7 +568,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
                 );
 
                 fecha_dialogo_a.showYearPickerFirst(true);
-                fecha_dialogo_a.setTitle("¿Desde qué fecha?");
+                fecha_dialogo_a.setTitle("¿Hasta qué fecha?");
                 fecha_dialogo_a.show(getActivity().getFragmentManager(), "Hasta");;
                 fecha_dialogo_a.setAccentColor(getResources().getColor(R.color.colorPrimario));
 
