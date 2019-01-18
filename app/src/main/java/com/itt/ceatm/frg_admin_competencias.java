@@ -139,6 +139,8 @@ public class frg_admin_competencias extends Fragment {
 
 
         //fecha_competencias.setDefaultDay(Calendar.getInstance().get(Calendar.DAY_OF_MONTH+3));
+
+        fecha_competencias.set24HoursMode(true);
         fecha_competencias.setDefaultHourOfDay(24);
         fecha_competencias.setDefaultMinute(59);
         fecha_competencias.startAtCalendarView();

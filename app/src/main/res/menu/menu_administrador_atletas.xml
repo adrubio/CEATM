@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/nav_administrador_atletas_perfil"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/atleta_perfil"
         android:title="Perfil" />
 
     <item
         android:id="@+id/nav_administrador_atletas_estadisticas"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/atleta_estadisticas"
         android:title="Estadísticas" />
 
 </menu>

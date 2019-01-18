@@ -23,10 +23,11 @@
     <ScrollView
         android:layout_width="340dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:paddingTop="24dp"
         app:layout_constraintBottom_toTopOf="@+id/gd_bottomnav6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -87,7 +88,7 @@
                 app:ms_floatingLabelColor="@color/colorPrimario"
                 app:ms_floatingLabelText="Estado"
                 app:ms_highlightColor="@color/color_negro"
-                app:ms_hint="Seleccionar estado..."
+                app:ms_hint="Estado..."
                 app:ms_thickness="0.8dp" />
 
             <fr.ganfra.materialspinner.MaterialSpinner
@@ -100,7 +101,7 @@
                 app:ms_floatingLabelColor="@color/colorPrimario"
                 app:ms_floatingLabelText="Municipio"
                 app:ms_highlightColor="@color/color_negro"
-                app:ms_hint="Seleccionar municipio..."
+                app:ms_hint="Municipio..."
                 app:ms_thickness="1dp" />
 
 
@@ -123,8 +124,8 @@
                 android:id="@+id/btn_Fecha_Competencias"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginTop="16dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/est_boton_azul"
                 android:onClick="onClick"
                 android:text="Seleccionar fecha del evento"
@@ -201,14 +202,27 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_width="239dp"
+                android:layout_height="match_parent">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rcc_admin_competencias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_Admin_Competencias_Enviar"
+                android:layout_width="152dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/est_boton_verde"
+                android:text="Enviar"
+                android:textAlignment="center"
+                android:textColor="@color/color_blanco"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>

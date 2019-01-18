@@ -45,10 +45,6 @@ public class Activity_Administrador extends AppCompatActivity {
                             //bundle.putString("USUARIO",usUsuario);
                             selectedFragment = new frg_administrador_atletas();
                             break;
-                        case R.id.bnav_administrador_entrenadores:
-                            //bundle.putString("USUARIO",usUsuario);
-                            selectedFragment = new frg_atleta_estadisticas();
-                            break;
                         case R.id.bnav_administrador_competencias:
                             //bundle.putString("USUARIO",usUsuario);
                             selectedFragment = new frg_admin_competencias();

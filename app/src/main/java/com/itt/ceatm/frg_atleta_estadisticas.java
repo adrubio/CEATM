@@ -282,6 +282,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
 
         puntajes_set.setBarBorderColor(R.color.colorPrimario);
         puntajes_set.setValueFormatter(new MyValueFormatter());
+
         //Ocultar los valores de cada barra
         //puntajes_set.setDrawValues(false);
 //        //puntajes_set.setColors(new int[] { R.color.colorPrimary, R.color.colorPrimario, R.color.color_negro, R.color.colorAccent }, frg_atleta_estadist   icas.this.getContext());
@@ -323,7 +324,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
 //
 //        //Formatter------------------------------------------------
 
-        final String[] quarters = new String[] { "Juegos 1", "J2", "J3", "J4", "J5", "J6" };
+        final String[] quarters = new String[] { "J1", "J2", "J3", "J4", "J5", "J6" };
 
         IAxisValueFormatter formatter = new IAxisValueFormatter() {
 
@@ -428,7 +429,7 @@ public class frg_atleta_estadisticas extends Fragment implements OnChartGestureL
                     break;
             }
 
-            return mFormat.format(value) + sufijo; // e.g. append a dollar-sign
+            return mFormat.format(value) + sufijo;
         }
     }
 

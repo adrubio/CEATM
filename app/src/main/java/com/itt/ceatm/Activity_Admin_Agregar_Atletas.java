@@ -74,8 +74,8 @@ public class Activity_Admin_Agregar_Atletas extends AppCompatActivity implements
         datos_Modalidades.add("B");
         datos_Modalidades.add("C");
 
-        datos_Entrenadores.add("Guillermo del Toro");
-        datos_Entrenadores.add("PewDiePie");
+        datos_Entrenadores.add("Mauricio Lavardez Castillo");
+        datos_Entrenadores.add("Omar Gonzalez Marian");
         datos_Entrenadores.add("freddy Mercury");
 
         datos_Municipios.add("Tijuana");
